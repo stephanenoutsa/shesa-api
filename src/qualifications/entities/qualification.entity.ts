@@ -9,7 +9,8 @@ export class Qualification extends Base {
   member: Member;
 
   @Column({
-    type: 'longtext',
+    // type: 'longtext',
+    type: 'text',
     nullable: true
   })
   description: string;

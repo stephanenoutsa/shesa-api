@@ -15,7 +15,8 @@ export class Job extends Base {
   companyName: string;
 
   @Column({
-    type: 'longtext',
+    // type: 'longtext',
+    type: 'text',
     nullable: true
   })
   companyDesc: string;

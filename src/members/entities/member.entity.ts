@@ -32,7 +32,8 @@ export class Member extends Base {
   @Column()
   password: string;
 
-  @Column('year')
+  // @Column('year')
+  @Column('integer')
   batch: number;
 
   @Column()

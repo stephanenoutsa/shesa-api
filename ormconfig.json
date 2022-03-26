@@ -1,9 +1,9 @@
 {
-  "type": "mysql",
+  "type": "postgres",
   "host": "localhost",
-  "port": 8889,
-  "username": "root",
-  "password": "root",
+  "port": 5432,
+  "username": "stephnoutsa",
+  "password": "postgres",
   "database": "shesa",
   "entities": ["dist/**/*.entity{.ts,.js}"],
   "synchronize": true

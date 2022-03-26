@@ -15,7 +15,8 @@ export class Event extends Base {
   thumbnail: string;
 
   @Column({
-    type: 'longtext',
+    // type: 'longtext',
+    type: 'text',
     nullable: true
   })
   description: string;
