@@ -6,5 +6,11 @@
   "password": "bfe80a9fd5209b9b6757c2f5aaceb2d6554b5f170abe468d19a9791039b57d26",
   "database": "dafnvb3m0avegp",
   "entities": ["dist/**/*.entity{.ts,.js}"],
-  "synchronize": true
+  "synchronize": true,
+  "ssl": true,
+  "extra": {
+    "ssl": {
+      "rejectUnauthorized": false
+    }
+  }
 }
