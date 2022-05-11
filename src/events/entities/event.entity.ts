@@ -1,4 +1,4 @@
-import { Entity, Column, DeleteDateColumn, OneToMany } from "typeorm";
+import { Entity, Column, DeleteDateColumn, OneToMany } from 'typeorm';
 
 import { Base } from '../../common/entities/base.entity';
 import { EventImage } from '../../event-images/entities/event-image.entity';
@@ -17,11 +17,11 @@ export class Event extends Base {
   @Column({
     // type: 'longtext',
     type: 'text',
-    nullable: true
+    nullable: true,
   })
   description: string;
 
-  @OneToMany(() => EventImage, image => image.event)
+  @OneToMany(() => EventImage, (image) => image.event)
   images: EventImage[];
 
   @DeleteDateColumn()

@@ -9,7 +9,7 @@ import { Cv } from './entities/cv.entity';
 export class CvsService {
   constructor(
     @InjectRepository(Cv)
-    private cvRepository: Repository<Cv>
+    private cvRepository: Repository<Cv>,
   ) {}
 
   async create(createCvDto: CreateCvDto) {

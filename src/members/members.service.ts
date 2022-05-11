@@ -9,7 +9,7 @@ import { Member } from './entities/member.entity';
 export class MembersService {
   constructor(
     @InjectRepository(Member)
-    private memberRepository: Repository<Member>
+    private memberRepository: Repository<Member>,
   ) {}
 
   async create(createMemberDto: CreateMemberDto) {
@@ -26,19 +26,22 @@ export class MembersService {
 
   async findOne(id: number) {
     const member = await this.memberRepository.findOne(id);
-    
+
     return member;
   }
 
   async update(id: number, updateMemberDto: UpdateMemberDto) {
-    const updatedMember = await this.memberRepository.update(id, updateMemberDto);
+    const updatedMember = await this.memberRepository.update(
+      id,
+      updateMemberDto,
+    );
 
     return updateMemberDto;
   }
 
   async remove(id: number) {
     await this.memberRepository.delete(id);
-    
+
     return;
   }
 }

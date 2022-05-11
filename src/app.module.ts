@@ -14,8 +14,13 @@ import { QualificationsModule } from './qualifications/qualifications.module';
 
 @Module({
   imports: [
-    MembersModule, EventsModule, EventImagesModule, CvsModule,
-    InternshipsModule, JobsModule, QualificationsModule,
+    MembersModule,
+    EventsModule,
+    EventImagesModule,
+    CvsModule,
+    InternshipsModule,
+    JobsModule,
+    QualificationsModule,
     TypeOrmModule.forRoot(),
   ],
   controllers: [AppController],
@@ -23,8 +28,8 @@ import { QualificationsModule } from './qualifications/qualifications.module';
     AppService,
     {
       provide: APP_FILTER,
-      useClass: AllExceptionsFilter
-    }
-  ]
+      useClass: AllExceptionsFilter,
+    },
+  ],
 })
 export class AppModule {}

@@ -1,4 +1,4 @@
-import { Entity, Column, OneToMany } from "typeorm";
+import { Entity, Column, OneToMany } from 'typeorm';
 
 import { Base } from '../../common/entities/base.entity';
 import { Cv } from '../../cvs/entities/cv.entity';
@@ -39,15 +39,15 @@ export class Member extends Base {
   @Column()
   field: string;
 
-  @OneToMany(() => Qualification, qualification => qualification.member)
+  @OneToMany(() => Qualification, (qualification) => qualification.member)
   qualifications: Qualification[];
 
-  @OneToMany(() => Cv, cv => cv.member)
+  @OneToMany(() => Cv, (cv) => cv.member)
   cvs: Cv[];
 
-  @OneToMany(() => Internship, internship => internship.member)
+  @OneToMany(() => Internship, (internship) => internship.member)
   internships: Internship[];
 
-  @OneToMany(() => Job, job => job.member)
+  @OneToMany(() => Job, (job) => job.member)
   jobs: Job[];
 }

@@ -9,11 +9,13 @@ import { Internship } from './entities/internship.entity';
 export class InternshipsService {
   constructor(
     @InjectRepository(Internship)
-    private internshipRepository: Repository<Internship>
+    private internshipRepository: Repository<Internship>,
   ) {}
 
   async create(createInternshipDto: CreateInternshipDto) {
-    const savedInternship = await this.internshipRepository.save(createInternshipDto);
+    const savedInternship = await this.internshipRepository.save(
+      createInternshipDto,
+    );
 
     return savedInternship;
   }
@@ -31,7 +33,10 @@ export class InternshipsService {
   }
 
   async update(id: number, updateInternshipDto: UpdateInternshipDto) {
-    const updatedInternship = await this.internshipRepository.update(id, updateInternshipDto);
+    const updatedInternship = await this.internshipRepository.update(
+      id,
+      updateInternshipDto,
+    );
 
     return updatedInternship;
   }

@@ -9,7 +9,7 @@ import { Job } from './entities/job.entity';
 export class JobsService {
   constructor(
     @InjectRepository(Job)
-    private jobRepository: Repository<Job>
+    private jobRepository: Repository<Job>,
   ) {}
 
   async create(createJobDto: CreateJobDto) {

@@ -1,11 +1,11 @@
-import { Entity, Column, DeleteDateColumn, ManyToOne } from "typeorm";
+import { Entity, Column, DeleteDateColumn, ManyToOne } from 'typeorm';
 
 import { Base } from '../../common/entities/base.entity';
 import { Member } from '../../members/entities/member.entity';
 
 @Entity()
 export class Internship extends Base {
-  @ManyToOne(() => Member, member => member.internships)
+  @ManyToOne(() => Member, (member) => member.internships)
   member: Member;
 
   @Column()
@@ -14,7 +14,7 @@ export class Internship extends Base {
   @Column({
     // type: 'longtext',
     type: 'text',
-    nullable: true
+    nullable: true,
   })
   companyDesc: string;
 
@@ -23,10 +23,10 @@ export class Internship extends Base {
 
   @Column({
     type: 'date',
-    nullable: true
+    nullable: true,
   })
   endDate: string;
-  
+
   @DeleteDateColumn()
   deletedAt: string;
 }

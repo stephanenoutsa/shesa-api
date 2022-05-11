@@ -1,21 +1,15 @@
-import * as Joi from "joi";
+import * as Joi from 'joi';
 
 export const createJobSchema = Joi.object({
-  memberId: Joi.number()
-    .required(),
+  memberId: Joi.number().required(),
 
-  title: Joi.string()
-    .max(255)
-    .required(),
+  title: Joi.string().max(255).required(),
 
-  companyName: Joi.string()
-    .max(30)
-    .required(),
+  companyName: Joi.string().max(30).required(),
 
   companyDesc: Joi.string(),
 
-  startDate: Joi.date()
-    .required(),
+  startDate: Joi.date().required(),
 
-  endDate: Joi.date()
+  endDate: Joi.date(),
 });

@@ -1,4 +1,14 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete, UseGuards, UsePipes } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Patch,
+  Param,
+  Delete,
+  UseGuards,
+  UsePipes,
+} from '@nestjs/common';
 import { AuthGuard } from './../common/guards/auth.guard';
 import { JoiValidationPipe } from './../common/pipes/joi-validation.pipe';
 import { EventImagesService } from './event-images.service';
@@ -31,7 +41,10 @@ export class EventImagesController {
   @Patch(':id')
   @UseGuards(AuthGuard)
   @UsePipes(new JoiValidationPipe(updateEventImageSchema))
-  update(@Param('id') id: string, @Body() updateEventImageDto: UpdateEventImageDto) {
+  update(
+    @Param('id') id: string,
+    @Body() updateEventImageDto: UpdateEventImageDto,
+  ) {
     return this.eventImagesService.update(+id, updateEventImageDto);
   }
 

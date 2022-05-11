@@ -1,23 +1,17 @@
-import * as Joi from "joi";
+import * as Joi from 'joi';
 
 const currentYear = new Date().getFullYear();
 
 export const updateMemberSchema = Joi.object({
-  firstname: Joi.string()
-    .max(30),
-  
-  lastname: Joi.string()
-    .max(30)
-    .required(),
+  firstname: Joi.string().max(30),
 
-  nickname: Joi.string()
-    .max(30),
+  lastname: Joi.string().max(30).required(),
+
+  nickname: Joi.string().max(30),
 
   avatar: Joi.string(),
 
-  dob: Joi.string()
-    .min(10)
-    .max(10),
+  dob: Joi.string().min(10).max(10),
 
   batch: Joi.number()
     .integer()
@@ -25,5 +19,5 @@ export const updateMemberSchema = Joi.object({
     .max(currentYear - 7)
     .required(),
 
-  field: Joi.string()
+  field: Joi.string(),
 });

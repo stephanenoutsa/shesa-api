@@ -1,6 +1,15 @@
 import {
-  Controller, Get, Post, Body, Patch, Param, Delete,
-  UsePipes, UseGuards, UseInterceptors, UploadedFile
+  Controller,
+  Get,
+  Post,
+  Body,
+  Patch,
+  Param,
+  Delete,
+  UsePipes,
+  UseGuards,
+  UseInterceptors,
+  UploadedFile,
 } from '@nestjs/common';
 import { FileInterceptor } from '@nestjs/platform-express';
 import { AuthGuard } from './../common/guards/auth.guard';
@@ -21,7 +30,7 @@ export class MembersController {
   @UseInterceptors(FileInterceptor('avatar'))
   create(
     @Body() createMemberDto: CreateMemberDto,
-    @UploadedFile() avatar: Express.Multer.File
+    @UploadedFile() avatar: Express.Multer.File,
   ) {
     const path = avatar.path;
     return this.membersService.create(createMemberDto);

@@ -1,4 +1,14 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete, UseGuards, UsePipes } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Patch,
+  Param,
+  Delete,
+  UseGuards,
+  UsePipes,
+} from '@nestjs/common';
 import { AuthGuard } from './../common/guards/auth.guard';
 import { JoiValidationPipe } from './../common/pipes/joi-validation.pipe';
 import { CvsService } from './cvs.service';

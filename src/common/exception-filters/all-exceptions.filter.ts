@@ -22,17 +22,17 @@ export class AllExceptionsFilter implements ExceptionFilter {
       exception instanceof HttpException
         ? exception.getStatus()
         : HttpStatus.INTERNAL_SERVER_ERROR;
-    
+
     const errorMessage =
       exception instanceof HttpException
         ? exception.message
-        : 'Something unexpected happened'
+        : 'Something unexpected happened';
 
     const responseBody = {
       statusCode: httpStatus,
       timestamp: new Date().toISOString(),
       path: httpAdapter.getRequestUrl(ctx.getRequest()),
-      message: errorMessage
+      message: errorMessage,
     };
     console.error('ERROR', responseBody);
 

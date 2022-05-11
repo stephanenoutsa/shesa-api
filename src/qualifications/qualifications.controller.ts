@@ -1,4 +1,14 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete, UseGuards, UsePipes } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Patch,
+  Param,
+  Delete,
+  UseGuards,
+  UsePipes,
+} from '@nestjs/common';
 import { AuthGuard } from './../common/guards/auth.guard';
 import { JoiValidationPipe } from './../common/pipes/joi-validation.pipe';
 import { QualificationsService } from './qualifications.service';
@@ -31,7 +41,10 @@ export class QualificationsController {
   @Patch(':id')
   @UseGuards(AuthGuard)
   @UsePipes(new JoiValidationPipe(updateQualificationSchema))
-  update(@Param('id') id: string, @Body() updateQualificationDto: UpdateQualificationDto) {
+  update(
+    @Param('id') id: string,
+    @Body() updateQualificationDto: UpdateQualificationDto,
+  ) {
     return this.qualificationsService.update(+id, updateQualificationDto);
   }
 

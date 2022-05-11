@@ -1,6 +1,18 @@
 import {
-  Controller, Get, Post, Body, Patch, Param, Delete, UsePipes, Query,
-  DefaultValuePipe, UseGuards, UseInterceptors, UploadedFile, Res
+  Controller,
+  Get,
+  Post,
+  Body,
+  Patch,
+  Param,
+  Delete,
+  UsePipes,
+  Query,
+  DefaultValuePipe,
+  UseGuards,
+  UseInterceptors,
+  UploadedFile,
+  Res,
 } from '@nestjs/common';
 import { Express, Response } from 'express';
 import { AuthGuard } from './../common/guards/auth.guard';
@@ -19,13 +31,15 @@ export class EventsController {
 
   @Post('thumbnails')
   @UseGuards(AuthGuard)
-  @UseInterceptors(FileInterceptor('thumbnail', {
-    storage: diskStorage({
-      destination: './uploads/events/thumbnails',
-      filename: editedFileName
+  @UseInterceptors(
+    FileInterceptor('thumbnail', {
+      storage: diskStorage({
+        destination: './uploads/events/thumbnails',
+        filename: editedFileName,
+      }),
+      fileFilter: imageFileFilter,
     }),
-    fileFilter: imageFileFilter
-  }))
+  )
   uploadThumbnail(@UploadedFile() thumbnail: Express.Multer.File) {
     return thumbnail;
   }
@@ -43,10 +57,7 @@ export class EventsController {
   }
 
   @Get('images')
-  findImageByPath(
-    @Query('path') path: string,
-    @Res() res: Response
-  ) {
+  findImageByPath(@Query('path') path: string, @Res() res: Response) {
     return res.sendFile(path, { root: '.' });
   }
 
@@ -58,10 +69,7 @@ export class EventsController {
   @Patch(':id')
   @UseGuards(AuthGuard)
   // @UsePipes(new JoiValidationPipe(saveEventSchema))
-  update(
-    @Param('id') id: string,
-    @Body() updateEventDto: UpdateEventDto
-  ) {
+  update(@Param('id') id: string, @Body() updateEventDto: UpdateEventDto) {
     return this.eventsService.update(+id, updateEventDto);
   }
 

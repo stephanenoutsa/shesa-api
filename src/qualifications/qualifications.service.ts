@@ -9,11 +9,13 @@ import { Qualification } from './entities/qualification.entity';
 export class QualificationsService {
   constructor(
     @InjectRepository(Qualification)
-    private qualificationRepository: Repository<Qualification>
+    private qualificationRepository: Repository<Qualification>,
   ) {}
 
   async create(createQualificationDto: CreateQualificationDto) {
-    const savedQualification = await this.qualificationRepository.save(createQualificationDto);
+    const savedQualification = await this.qualificationRepository.save(
+      createQualificationDto,
+    );
 
     return savedQualification;
   }
@@ -31,7 +33,10 @@ export class QualificationsService {
   }
 
   async update(id: number, updateQualificationDto: UpdateQualificationDto) {
-    const updatedQualification = await this.qualificationRepository.update(id, updateQualificationDto);
+    const updatedQualification = await this.qualificationRepository.update(
+      id,
+      updateQualificationDto,
+    );
 
     return updatedQualification;
   }

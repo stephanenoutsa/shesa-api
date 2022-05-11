@@ -1,13 +1,9 @@
-import * as Joi from "joi";
+import * as Joi from 'joi';
 
 export const updateQualificationSchema = Joi.object({
-  memberId: Joi.number()
-    .required(),
+  memberId: Joi.number().required(),
 
-  description: Joi.string()
-    .required(),
+  description: Joi.string().required(),
 
-  url: Joi.binary()
-    .encoding('base64')
-    .required()
+  url: Joi.binary().encoding('base64').required(),
 });

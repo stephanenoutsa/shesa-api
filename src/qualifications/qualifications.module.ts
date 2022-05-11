@@ -7,6 +7,6 @@ import { Qualification } from './entities/qualification.entity';
 @Module({
   imports: [TypeOrmModule.forFeature([Qualification])],
   controllers: [QualificationsController],
-  providers: [QualificationsService]
+  providers: [QualificationsService],
 })
 export class QualificationsModule {}

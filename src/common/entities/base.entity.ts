@@ -1,4 +1,9 @@
-import { Entity, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn } from "typeorm";
+import {
+  Entity,
+  PrimaryGeneratedColumn,
+  CreateDateColumn,
+  UpdateDateColumn,
+} from 'typeorm';
 
 @Entity()
 export abstract class Base {
@@ -11,4 +16,3 @@ export abstract class Base {
   @UpdateDateColumn()
   updatedAt: Date;
 }
-

@@ -9,7 +9,7 @@ import { Event } from './entities/event.entity';
 export class EventsService {
   constructor(
     @InjectRepository(Event)
-    private eventRepository: Repository<Event>
+    private eventRepository: Repository<Event>,
   ) {}
 
   async create(createEventDto: CreateEventDto) {

@@ -9,11 +9,13 @@ import { EventImage } from './entities/event-image.entity';
 export class EventImagesService {
   constructor(
     @InjectRepository(EventImage)
-    private eventImageRepository: Repository<EventImage>
+    private eventImageRepository: Repository<EventImage>,
   ) {}
 
   async create(createEventImageDto: CreateEventImageDto) {
-    const savedImage = await this.eventImageRepository.save(createEventImageDto);
+    const savedImage = await this.eventImageRepository.save(
+      createEventImageDto,
+    );
 
     return savedImage;
   }
@@ -31,7 +33,10 @@ export class EventImagesService {
   }
 
   async update(id: number, updateEventImageDto: UpdateEventImageDto) {
-    const updatedImage = await this.eventImageRepository.update(id, updateEventImageDto);
+    const updatedImage = await this.eventImageRepository.update(
+      id,
+      updateEventImageDto,
+    );
 
     return updatedImage;
   }

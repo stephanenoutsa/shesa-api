@@ -8,9 +8,9 @@ import { Event } from './entities/event.entity';
 @Module({
   imports: [
     TypeOrmModule.forFeature([Event]),
-    MulterModule.register({ dest: './uploads/events/thumbnails' })
+    MulterModule.register({ dest: './uploads/events/thumbnails' }),
   ],
   controllers: [EventsController],
-  providers: [EventsService]
+  providers: [EventsService],
 })
 export class EventsModule {}

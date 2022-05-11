@@ -1,16 +1,10 @@
 {
   "type": "postgres",
-  "host": "ec2-3-229-161-70.compute-1.amazonaws.com",
+  "host": "localhost",
   "port": 5432,
-  "username": "ephxzrivrxdpab",
-  "password": "bfe80a9fd5209b9b6757c2f5aaceb2d6554b5f170abe468d19a9791039b57d26",
-  "database": "dafnvb3m0avegp",
+  "username": "stephnoutsa",
+  "password": "postgres",
+  "database": "shesa",
   "entities": ["dist/**/*.entity{.ts,.js}"],
-  "synchronize": true,
-  "ssl": true,
-  "extra": {
-    "ssl": {
-      "rejectUnauthorized": false
-    }
-  }
+  "synchronize": true
 }
